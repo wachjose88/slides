@@ -7,6 +7,7 @@
 \usetheme{metropolis}
 \usepackage{ccicons}
 \usepackage{hyperref}
+\usepackage{listings}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,14 +88,58 @@
  
   \begin{itemize}
     \item Web Server Gateway Interface (WSGI)
-    \item servers
     \begin{itemize}
       \item nginx: uWSGI
       \item apache: mod\_wsgi
       \item ...
     \end{itemize}
+    \item Asynchronous Server Gateway Interface (ASGI)
   \end{itemize}
   
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Flask 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Flask: A Micro Web Framework}
+
+
+\begin{frame}{Flask: A Micro Web Framework}
+ 
+  \begin{itemize}
+    \item a microframework for web development initially released 
+      on April 1, 2010
+    \item \href{https://github.com/pallets/flask}{github.com/pallets/flask}
+    \item based on 
+    \begin{itemize}
+      \item Werkzeug: toolkit for WSGI
+      \item Jinja: template engine
+    \end{itemize}
+    \item implements nothing which is implemented by other libraries
+    \item extensions for database connection, form validation, ...
+  \end{itemize}
+  
+\end{frame}
+
+\defverbatim[colored]\lstpython{
+  \begin{lstlisting}[language=python,basicstyle=\ttfamily,keywordstyle=\color{red}]
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route("/")
+    def index():
+        return "Python for Web Development"
+
+
+    if __name__ == "__main__":
+        app.run(debug=False)
+  \end{lstlisting}
+}
+
+\begin{frame}{Example}
+  \lstpython
 \end{frame}
 
 
@@ -104,12 +149,37 @@
 
 \section{Django Web Framework}
 
+\begin{frame}{Django Web Framework}
+ 
+  \begin{itemize}
+    \item a framework for developing large and database-driven
+      web applications initially released 
+      on July 21, 2005
+    \item \href{https://www.djangoproject.com/}{www.djangoproject.com}
+    \item Model-View-Controller architectural design pattern
+    \item includes libraries for many web-releated functionalities
+  \end{itemize}
+  
+\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Flask 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Flask Micro Web Framework}
+\begin{frame}{Features}
+ 
+  \begin{itemize}
+    \item object-relational mapper to bind python classes (models)
+      to database tables
+    \item auto-generated admin interface based on the models
+    \item template engine (views)
+    \item explicit URL definition (controller)
+    \item form validation
+    \item internationalization
+    \item caching framework
+    \item web server for development
+    \item ...
+  \end{itemize}
+  
+\end{frame}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

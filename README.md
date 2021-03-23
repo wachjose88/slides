@@ -8,3 +8,4 @@ The Slides are licensed under a
 ## Content
 
 - **template**: the template used for the slides
+- **python-for-web-dev-intro**: a brief introduction to web development with python - [PDF](https://github.com/wachjose88/slides/blob/main/python-for-web-dev-intro/python-for-web-dev-intro.pdf)
